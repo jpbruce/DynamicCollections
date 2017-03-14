@@ -3,28 +3,38 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using DynamicCollections.Models;
 
 namespace DynamicCollections.Controllers
 {
     public class HomeController : Controller
     {
+        [HttpGet]
         public IActionResult Index()
         {
-            return View();
+            return View(new PersonsCollection());
         }
 
-        public IActionResult About()
+        [HttpPost]
+        public ActionResult Index(PersonsCollection personsCollection)
         {
-            ViewData["Message"] = "Your application description page.";
+            if (!ModelState.IsValid)
+            {
+                // we have errors, return the view with messages
+                return View(personsCollection);
+            }
+            else
+            {
+                return Content("success");
+            }
 
-            return View();
+            //return RedirectToAction(nameof(Index));
         }
 
-        public IActionResult Contact()
+        [HttpGet]
+        public ActionResult RenderPerson()
         {
-            ViewData["Message"] = "Your contact page.";
-
-            return View();
+            return View("Person");
         }
 
         public IActionResult Error()
