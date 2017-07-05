@@ -9,7 +9,6 @@ namespace DynamicCollections.Models
 {
     public class Person
     {
-        [Required(ErrorMessage = "Required")]
         public string FirstName { get; set; }
         public string Surname { get; set; }
     }

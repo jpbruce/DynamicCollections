@@ -14,9 +14,10 @@
         <div class="form-group">
             <label>Surname</label>
             <input asp-for="Surname" placeholder="Surname" class="form-control" />
+            <span asp-validation-for="Surname" class="text-danger"></span>
         </div>
 
         <button type="button" class="btn btndanger removePersonButton">Remove</button>
         <hr />
     }
-</div> 
+</div>
