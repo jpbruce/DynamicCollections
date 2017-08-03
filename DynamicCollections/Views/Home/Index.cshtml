@@ -1,4 +1,4 @@
-﻿@model DynamicCollections.Models.PersonsCollection
+﻿@model DynamicCollections.Models.PersonsViewModel
 <br />
 
 <form method="post" class="form-inline">
@@ -8,8 +8,9 @@
             Html.RenderPartial("Person", person);
         }
     </div>
-    <button type="submit" class="btn btn-success">Save</button>
     <button type="button" class="btn btnprimary addPersonButton">Add</button>
+    <br /><br />
+    <button type="submit" class="btn btn-success">Save</button>
 </form>
 
 @section scripts

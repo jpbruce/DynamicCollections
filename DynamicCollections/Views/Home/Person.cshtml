@@ -3,20 +3,20 @@
 @model DynamicCollections.Models.Person
 
 <div class="person">
-    @using (Html.BeginCollectionItem(nameof(PersonsCollection.Persons)))
+    @using (Html.BeginCollectionItem("Persons"))
     {
         <div class="form-group">
-            <label>FirstName</label>
-            <input asp-for="FirstName" placeholder="FirstName" class="form-control" />
+            <label>First Name</label>
+            <input asp-for="FirstName" placeholder="Required" class="form-control" />
             <span asp-validation-for="FirstName" class="text-danger"></span>
         </div>
 
         <div class="form-group">
-            <label>Surname</label>
-            <input asp-for="Surname" placeholder="Surname" class="form-control" />
+            <label>Last Name</label>
+            <input asp-for="LastName" placeholder="" class="form-control" />
         </div>
 
         <button type="button" class="btn btndanger removePersonButton">Remove</button>
         <hr />
     }
-</div> 
+</div>

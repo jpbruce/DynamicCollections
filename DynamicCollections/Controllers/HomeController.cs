@@ -12,28 +12,25 @@ namespace DynamicCollections.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            return View(new PersonsCollection());
+            return View(new PersonsViewModel());
         }
 
         [HttpPost]
-        public ActionResult Index(PersonsCollection personsCollection)
+        public ActionResult Index(PersonsViewModel viewModel)
         {
             if (!ModelState.IsValid)
             {
                 // we have errors, return the view with messages
-                return View(personsCollection);
-            }
-            else
-            {
-                return Content("success");
+                return View(viewModel);
             }
 
-            //return RedirectToAction(nameof(Index));
+            return Content("success");
         }
 
         [HttpGet]
         public ActionResult RenderPerson()
         {
+            System.Console.WriteLine("iran1");
             return View("Person");
         }
 
