@@ -30,8 +30,7 @@ namespace DynamicCollections.Controllers
         [HttpGet]
         public ActionResult RenderPerson()
         {
-            System.Console.WriteLine("iran1");
-            return View("Person");
+            return View("_Person");
         }
 
         public IActionResult Error()
